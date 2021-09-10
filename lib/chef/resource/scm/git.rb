@@ -117,6 +117,10 @@ class Chef
       property :depth, Integer,
         description: "The number of past revisions to be included in the git shallow clone. Unless specified the default behavior will do a full clone."
 
+      property :no_tags, [TrueClass, FalseClss],
+        description: "Whether to clone tags. Unless specified the default behavior will clone all tags.",
+        default: false
+
       property :enable_submodules, [TrueClass, FalseClass],
         description: "Perform a sub-module initialization and update.",
         default: false

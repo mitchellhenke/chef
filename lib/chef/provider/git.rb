@@ -178,6 +178,7 @@ class Chef
           clone_cmd << "-o #{remote}" unless remote == "origin"
           clone_cmd << "--depth #{new_resource.depth}" if new_resource.depth
           clone_cmd << "--no-single-branch" if new_resource.depth && git_has_single_branch_option?
+          clone_cmd << "--no-tags" if new_resource.no_tags
           clone_cmd << "\"#{new_resource.repository}\""
           clone_cmd << "\"#{cwd}\""
 
